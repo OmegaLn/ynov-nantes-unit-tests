@@ -1,0 +1,20 @@
+div.starter {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff0000;
+}
+title {
+    margin: 12px;
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+    display: block;
+}
+
+body {
+    text-align: center;
+    background: black;
+}
+

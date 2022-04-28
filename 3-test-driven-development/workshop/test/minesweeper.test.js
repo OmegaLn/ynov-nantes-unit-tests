@@ -134,18 +134,18 @@ describe("MineSweeper", function () {
     describe.each(inputInitData)("Create minesweeper board with bombs and cell numbers", (data) => {
         test(`MineSweeper Board should bomb on his coordinates`, () => {
             const minesweeper = new Board(data.rows, data.columns, data.bombs);
-            const minesweeperSpoiler = minesweeper.getPoints();
+            const boardSpoiler = minesweeper.getPoints();
 
             data.bombs.forEach((bomb) => {
                 //In each bomb, the cell should be a bomb on the board with coordinates [bomb[0], bomb[1]]
-                expect(minesweeperSpoiler[bomb[0]][bomb[1]]).toBe("*");
+                expect(boardSpoiler[bomb[0]][bomb[1]]).toBe("*");
             });
         });
         // If a bomb is next to a normal cell then the cell has +1
         test(`MineSweeper Board cell should have numbers in it`, () => {
             const minesweeper = new Board(data.rows, data.columns, data.bombs);
-            const minesweeperSpoiler = minesweeper.getPoints();
-            expect(minesweeperSpoiler).toMatchObject(data.expectedBoardPoint);
+            const boardSpoiler = minesweeper.getPoints();
+            expect(boardSpoiler).toMatchObject(data.expectedBoardPoint);
         });
         
     });

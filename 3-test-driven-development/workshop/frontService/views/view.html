@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="title" >Minesweeper</title>
+    <link rel="text/css" href="css/main.css" />
+    
+</head>
+<body>   
+    <div class="starter">
+        <title style="display: block;">Minesweeper</title>
+        <br>
+        <div class="flex-container">
+            <div class="game-board">
+                <table id="board" style="border-color: black;border: 1px solid #333;">
+                    <thead style="background-color: #333;
+                    color: #fff;">
+                        <tr>
+                            <th colspan="4">Minesweeper</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            
+                            <td style="border: 1px solid #333;">*</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">0</td>
+                            <td style="border: 1px solid #333;">1</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">0</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">*</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #333;">*</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">1</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">1</td>
+                            <td style="border: 1px solid #333;">*</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+    </div>
+</body>
+</html>
+
+<script language="javascript">
+    function get() {
+  return new Promise((resolve, reject) => {
+    var req = new XMLHttpRequest();
+    req.open('GET', '/minesweeper');
+    req.onload = () => resolve(req.response);
+  });
+}           
+ // then to get the data, call the function
+
+get().then((data) => {
+  var board = JSON.parse(data);
+  console.log(data)
+  alert("data")
+  // do something with the data
+});
+</script>

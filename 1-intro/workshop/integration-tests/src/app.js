@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const ItemService = require('./services/itemService');
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/', async (req, res) => {
