@@ -36,7 +36,7 @@ const mongoose = require('mongoose');
 const ToDo = require('./toDoModel.js').ToDo;
 const DB_URI = 'mongodb://mongo:27017/toDoApp';
 
-mongoose.connect(DB_URI).then(() => {
+mongoose.connect(DB_URI, {useUnifiedTopology: true, useNewUrlParser: true}).then(() => {
   console.log('Listening on port: ' + PORT);
   app.listen(PORT);
 });
