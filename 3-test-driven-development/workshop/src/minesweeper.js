@@ -83,6 +83,12 @@ class Cell {
         this.row = row;
         this.column = column;
         this.isBomb = false;
+        test("Test description", () => {
+            expect(() => {this.row < 0).toThrow('rows must be greater than 0');
+          });
+        if(this.row < 0) {
+            throw new Error('rows must be greater than 0');
+        }
     }
     get() {
         if (this.isBomb) {
@@ -93,5 +99,6 @@ class Cell {
 }
 
 module.exports = {
-    Board
+    Board,
+    Cell
 }; 

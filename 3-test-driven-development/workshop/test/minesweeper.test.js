@@ -1,4 +1,5 @@
-const { Board } = require("../src/minesweeper");
+const { Board, Cell} = require("../src/minesweeper");
+
 
 const inputInitData = [
     {
@@ -66,6 +67,29 @@ const inputInitData = [
         expectedBoardPoint : [ [ '*', 1 ], [ 1, 0 ] ]
     },
 ];
+
+describe("Cell", function () {
+    
+
+    /*
+
+expect(() => {
+something to be tested with a throw
+}).toThrow(Error)
+
+    */
+    test("should throw an exception when rows < 0", function () {
+        
+        try {
+            const cell = new Cell(-1, 2);
+        }
+        catch (e) {
+            expect(e.message).toBe("rows must be greater than 0");
+        }
+    })
+
+})
+
 
 describe("MineSweeper", function () {
     //Test constructor of Board
