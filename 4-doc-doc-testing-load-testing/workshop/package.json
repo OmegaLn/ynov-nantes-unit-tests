@@ -4,18 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "jest"
+    "start:dev": "nodemon server.js",
+    "start:test": "jest",
+    "start:prod": "node server.js",
+    "start:testwatch": "jest --watch",
+    "start:testcov": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "codeceptjs": "^3.3.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.1",
-    "nodemon": "^1.19.4"
+    "mongoose": "^5.2.7",
+    "nodemon": "^1.18.9",
+    "playwright": "^1.21.1",
+    "swagger-ui-express": "^4.3.0",
+    "webdriverio": "^6.12.1"
   },
   "devDependencies": {
+    "@codeceptjs/configure": "^0.8.0",
+    "@codeceptjs/examples": "^1.2.1",
+    "@codeceptjs/ui": "^0.4.6",
+    "codeceptjs": "^3.3.2",
     "jest": "^28.0.3"
   }
 }

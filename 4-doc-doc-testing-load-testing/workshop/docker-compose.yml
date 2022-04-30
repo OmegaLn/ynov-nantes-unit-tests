@@ -1,10 +1,9 @@
 version: '3'
 services:
-
   web:
     image: "docker-node-mongo-todo-app"
     build: .
-    command: "npm start"
+    command: "node server.js"
     ports:
       - "5000:5000"
     depends_on:
